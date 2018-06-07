@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+   <children>
+      <BorderPane layoutX="-2.0" layoutY="-1.0" prefHeight="550.0" prefWidth="770.0">
+         <center>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                  <Tab text="SZKOLENIA">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="48.0" layoutY="14.0" prefHeight="200.0" prefWidth="669.0">
+                                 <children>
+                                    <GridPane prefHeight="144.0" prefWidth="531.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="10.0" prefWidth="148.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="539.0" minWidth="10.0" prefWidth="521.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Akronim/nazwa grupy" />
+                                          <Label text="Data od" GridPane.rowIndex="1" />
+                                          <Label text="Data do" GridPane.rowIndex="2" />
+                                          <Label text="Typ szkolenia" GridPane.rowIndex="3" />
+                                          <Label text="Kurs" GridPane.rowIndex="4" />
+                                          <TextField fx:id="fxTxtAkronim" GridPane.columnIndex="1" />
+                                          <DatePicker fx:id="fxDatDataOd" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <DatePicker fx:id="fxDatDataDo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <ComboBox fx:id="fxComTypSzkolenia" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <ComboBox fx:id="fxComRodzajKursu" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                       </children>
+                                    </GridPane>
+                                    <HBox prefHeight="60.0" prefWidth="600.0">
+                                       <children>
+                                          <Button fx:id="fxButDodajSzkolenie" mnemonicParsing="false" onAction="#onButDodajSzkolenie" text="Dodaj szkolenie">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="fxButEdytujSzkolenie" mnemonicParsing="false" onAction="#onButEdytujSzkolenie" text="Edytuj szkolenie">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="fxButUsunSzkolenie" mnemonicParsing="false" onAction="#onButUsunSzkolenie" text="Usuń szkolenie">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="fxButSlownikDniSzkolen" mnemonicParsing="false" onAction="#onButSlownikDniSzkolen" text="Słownik - dni szkoleń">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <TableView fx:id="fxTabViewSzkolenia" layoutX="37.0" layoutY="214.0" prefHeight="200.0" prefWidth="698.0">
+                                 <columns>
+                                    <TableColumn fx:id="fxColAkronim" prefWidth="75.0" text="Akronim" />
+                                    <TableColumn fx:id="fxColDataOd" prefWidth="75.0" text="Data od" />
+                                    <TableColumn fx:id="fxColDataDo" prefWidth="75.0" text="Data do" />
+                                    <TableColumn fx:id="fxColTypSzkolenia" prefWidth="153.0" text="Typ szkolenia" />
+                                    <TableColumn fx:id="fxColNazwaSzkolenia" prefWidth="153.0" text="Nazwa szkolenia" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                <Tab text="SŁOWNIK - DNI SZKOLEŃ">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="48.0" layoutY="14.0" prefHeight="200.0" prefWidth="669.0">
+                                 <children>
+                                    <GridPane prefHeight="144.0" prefWidth="531.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="10.0" prefWidth="148.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="539.0" minWidth="10.0" prefWidth="521.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Inicjały trenera" />
+                                          <Label text="Akronim szkolenia" GridPane.rowIndex="1" />
+                                          <Label text="Dzień szkolenia" GridPane.rowIndex="2" />
+                                          <Label text="Wolne (święto/ferie)" GridPane.rowIndex="3" />
+                                          <ComboBox fx:id="fxComDzienSzkolenia" onAction="#onComDzienSzkolenia" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <ComboBox fx:id="fxComInicjaly" onAction="#onComInicjaly" prefWidth="150.0" GridPane.columnIndex="1" />
+                                          <ComboBox fx:id="fxComAkronimSzkolenia" onAction="#onComAkronimSzkolenia" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <CheckBox fx:id="fxCheCzyDzienWolny" mnemonicParsing="false" onAction="#onCheCzyDzienWolny" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                       </children>
+                                    </GridPane>
+                                    <HBox prefHeight="60.0" prefWidth="600.0">
+                                       <children>
+                                          <Button fx:id="fxDodajDzienSzkolenia" mnemonicParsing="false" onAction="#onDodajDzienSzkolenia" text="Dodaj szkolenie">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="fxEdytujDzienSzkolenia" mnemonicParsing="false" onAction="#onEdytujDzienSzkolenia" text="Edytuj szkolenie">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="fxUsunDzienSzkolenia" mnemonicParsing="false" onAction="#onUsunDzienSzkolenia" text="Usuń szkolenie">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <TableView layoutX="37.0" layoutY="214.0" prefHeight="200.0" prefWidth="698.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="Inicjały" />
+                                  <TableColumn prefWidth="75.0" text="Imię" />
+                                    <TableColumn prefWidth="75.0" text="Nazwisko" />
+                                    <TableColumn prefWidth="75.0" text="Akronim" />
+                                    <TableColumn prefWidth="142.0" text="Dzień szkolenia" />
+                                    <TableColumn prefWidth="142.0" text="Wolne?" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="TRENERZY">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="48.0" layoutY="14.0" prefHeight="200.0" prefWidth="669.0">
+                                 <children>
+                                    <GridPane prefHeight="144.0" prefWidth="531.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="10.0" prefWidth="148.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="539.0" minWidth="10.0" prefWidth="521.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Imię użytkownika" />
+                                          <Label text="Nazwisko użytkownika" GridPane.rowIndex="1" />
+                                          <Label text="Hasło" GridPane.rowIndex="2" />
+                                          <Label text="Czy mentor?" GridPane.rowIndex="3" />
+                                          <TextField fx:id="fxImieUzytkownika" onAction="#onImieUzytkownika" GridPane.columnIndex="1" />
+                                          <ComboBox fx:id="fxComMentorTrener" onAction="#onComMentorTrener" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="fxNazwiskoUzytkownika" onAction="#onNazwiskoUzytkownika" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="fxHaslo" onAction="#onHaslo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                    <HBox prefHeight="60.0" prefWidth="600.0">
+                                       <children>
+                                          <Button fx:id="fxDodajUzytkownika" mnemonicParsing="false" onAction="#onDodajUzytkownika" text="Dodaj użytkownika">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="fxEdytujUzytkownika" mnemonicParsing="false" onAction="#onEdytujUzytkownika" text="Edytuj użytkownika">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="fxUsunUzytkownika" mnemonicParsing="false" onAction="#onUsunUzytkownika" text="Usuń użytkownika">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="fxPrzypiszKat" mnemonicParsing="false" onAction="#onPrzypiszKat" text="Przypisz kategorię">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <TableView fx:id="fxTableMentorTrener" layoutX="37.0" layoutY="214.0" prefHeight="200.0" prefWidth="698.0">
+                                 <columns>
+                                    <TableColumn fx:id="fxImie" prefWidth="75.0" text="Imię trenera" />
+                                    <TableColumn fx:id="fxNazwisko" prefWidth="75.0" text="Nazwisko trenera" />
+                                    <TableColumn fx:id="fxMentorTrener" prefWidth="160.0" text="Mentor/trener" />
+                                    <TableColumn fx:id="fxKategoria" prefWidth="160.0" text="Kategoria" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab onSelectionChanged="#wczytajKat" text="KATEGORIE">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="132.0" layoutY="14.0" prefHeight="413.0" prefWidth="514.0">
+                                 <children>
+                                    <GridPane>
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="246.0" minWidth="10.0" prefWidth="198.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" prefWidth="316.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Nazwa kategorii" />
+                                          <TextField fx:id="fxTxtNazwaKat" GridPane.columnIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                    <HBox fx:id="fxKategorie" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="fxButDodajKat1" mnemonicParsing="false" onAction="#onButDodajKat2" text="Dodaj kategorię">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="fxButEdytujKat1" mnemonicParsing="false" onAction="#onButEdytujKat2" text="Edytuj kategorię">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="fxButUsunKat1" mnemonicParsing="false" onAction="#onButUsunKat2" text="Usuń kategorię">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <TableView fx:id="fxTabViewNazwaKat" onMouseClicked="#wybranoKategorie" prefHeight="200.0" prefWidth="200.0">
+                                      <columns>
+                                        <TableColumn fx:id="fxColNazwaKat" prefWidth="330.0" text="Nazwa kategorii" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="KURSY">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="132.0" layoutY="14.0" prefHeight="413.0" prefWidth="514.0">
+                                 <children>
+                                    <GridPane>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="246.0" minWidth="10.0" prefWidth="198.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" prefWidth="316.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Nazwa kursu" />
+                                          <Label text="Liczba dni trwania kursu" GridPane.rowIndex="1" />
+                                          <TextField fx:id="fxTxtNazwaKursu" GridPane.columnIndex="1" />
+                                          <TextField fx:id="fxLTxticzbaDni" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="fxDodajKurs" mnemonicParsing="false" onAction="#onDodajKurs" text="Dodaj kurs">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="fxEdytujKurs" mnemonicParsing="false" onAction="#onEdytujKurs" text="Edytu kurs">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="fxUsunKurs" mnemonicParsing="false" onAction="#onUsunKurs" text="Usuń kurs">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <TableView fx:id="NazwaKursu" prefHeight="200.0" prefWidth="200.0">
+                                       <columns>
+                                          <TableColumn fx:id="fxNazwaKursu" prefWidth="265.0" text="Nazwa kursu" />
+                                          <TableColumn fx:id="fxLiczbaDni" minWidth="0.0" prefWidth="215.0" text="Liczba dni trwania" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+         <top>
+            <Label text="AGdOHS (ver. 0.01) - Aplikacja graficzna do obsługi harmonogramów szkoleń" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="15.0" left="50.0" right="50.0" top="15.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </top>
+      </BorderPane>
+   </children>
+</Pane>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="480.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SzkoleniaController">
+   <top>
+      <Label text="AGdOHS (ver. 0.01) - Aplikacja graficzna do obsługi harmonogramów szkoleń" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="57.0" prefHeight="200.0" prefWidth="503.0">
+               <children>
+                  <GridPane prefHeight="206.0" prefWidth="500.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="125.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="496.0" minWidth="10.0" prefWidth="378.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Akronim/nazwa grupy" />
+                        <Label text="Data od" GridPane.rowIndex="1" />
+                        <Label text="Data do" GridPane.rowIndex="2" />
+                        <Label text="Typ szkolenia" GridPane.rowIndex="3" />
+                        <Label text="Nazwa szkolenia" GridPane.rowIndex="4" />
+                        <TextField fx:id="fxTxtAkronim" GridPane.columnIndex="1" />
+                        <DatePicker fx:id="fxDatDataOd" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <DatePicker fx:id="fxDatDataDo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="fxComTypSzkolenia" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="fxComNazwaKursu" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+                  <HBox prefHeight="38.0" prefWidth="503.0" spacing="26.0">
+                     <children>
+                        <Button fx:id="fxButDodajSzkolenie" mnemonicParsing="false" onMouseClicked="#onButDodajSzkolenie" text="Dodaj szkolenie" />
+                        <Button fx:id="fxButEdytujSzkolenie" mnemonicParsing="false" onMouseClicked="#onButEdytujSzkolenie" text="Edytuj szkolenie" />
+                        <Button fx:id="fxButUsunSzkolenie" mnemonicParsing="false" onMouseClicked="#onButUsunSzkolenie" text="Usuń szkolenie" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <TableView fx:id="fxTabviewSzkolenia" layoutX="56.0" layoutY="227.0" prefHeight="200.0" prefWidth="502.0">
+              <columns>
+                <TableColumn fx:id="fxColAkronim" minWidth="50.0" prefWidth="100.0" text="Akronim" />
+                <TableColumn fx:id="fxColDataOd" minWidth="50.0" prefWidth="100.0" text="Data od" />
+                  <TableColumn fx:id="fxColDataDo" minWidth="50.0" prefWidth="100.0" text="Data do" />
+                  <TableColumn fx:id="fxColTypSzkolenia" minWidth="50.0" prefWidth="100.0" text="Typ szkolenia" />
+                  <TableColumn fx:id="fxColNazwaSzkolenia" minWidth="50.0" prefWidth="100.0" text="Nazwa szkolenia" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
