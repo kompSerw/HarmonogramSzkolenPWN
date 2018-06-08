@@ -31,8 +31,8 @@ public class StageController extends Parent {
         return listaStage;
     }
 
-    @Override
-    public Node getStyleableNode() {
-        return null;
-    }
+//    @Override
+//    public Node getStyleableNode() {
+//        return null;
+//    }
 }

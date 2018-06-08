@@ -12,10 +12,7 @@ import daoMySQL.DaoToMySQL;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -24,7 +21,7 @@ public class LogowanieController {
     private Stage stageLogowanie;
 
     @FXML
-    private TextArea fxTxtLogowanie;
+    private TextField fxTxtLogowanie;
 
     @FXML
     private PasswordField fxTxtHaslo;
