@@ -4,33 +4,37 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.Tooltip;
 import javafx.stage.Stage;
 
 public class MenuGlowneController {
 
     @FXML
-    private Button fxMGSzkolenia;
+    private ToggleButton fxMGSzkolenia;
 
     @FXML
-    private Button fxMGTrenerzy;
+    private ToggleButton fxMGTrenerzy;
 
     @FXML
-    private Button fxMGKategorie;
+    private ToggleButton fxMGKategorie;
 
     @FXML
-    private Button fxMGKursy;
+    private ToggleButton fxMGKursy;
 
     @FXML
-    private Button fxMGWyloguj;
+    private ToggleButton fxMGWyloguj;
+
+    private static boolean widoczny;
 
     @FXML
     void onMGKategorie(ActionEvent event) {
-        zamknijBierzaceIOtworzNoweOkno("TestKategorie", "Kategorie");
+        zamknijBierzaceIOtworzNoweOkno("Kategorie", "Kategorie");
     }
 
     @FXML
     void onMGKursy(ActionEvent event) {
-        zamknijBierzaceIOtworzNoweOkno("TestKursy", "Kursy");
+        zamknijBierzaceIOtworzNoweOkno("Kursy", "Kursy");
     }
 
     @FXML
@@ -56,17 +60,23 @@ public class MenuGlowneController {
         assert fxMGKategorie != null : "fx:id=\"fxMGKategorie\" was not injected: check your FXML file 'menuGlowne.fxml'.";
         assert fxMGKursy != null : "fx:id=\"fxMGKursy\" was not injected: check your FXML file 'menuGlowne.fxml'.";
 
-//        fxMGKategorie.setVisible(widoczny);
-//        fxMGTrenerzy.setVisible(widoczny);
-//        fxMGKursy.setVisible(widoczny);
+        //ustawienie dymków podpowiedzi do przycisków na formatce okna
+        fxMGSzkolenia.setTooltip(ustawToolTip(new Tooltip("Pokaż szkolenia")));
+        fxMGKategorie.setTooltip(ustawToolTip(new Tooltip("Pokaż kategorie")));
+        fxMGKursy.setTooltip(ustawToolTip(new Tooltip("Pokaż kursy")));
+        fxMGTrenerzy.setTooltip(ustawToolTip(new Tooltip("Pokaż trenerów")));
+        fxMGWyloguj.setTooltip(ustawToolTip(new Tooltip("Wyloguj i zamknij program")));
 
-//        fxMGKategorie.setDisable(false);
-//        fxMGTrenerzy.setDisable(false);
-//        fxMGKursy.setDisable(false);
+
 
     }
 
-    private static boolean widoczny;
+    private Tooltip ustawToolTip(Tooltip tt) {
+        tt.setStyle("-fx-font: normal bold 14 Langdon; "
+                + "-fx-base: #AE3522; "
+                + "-fx-text-fill: orange;");
+        return tt;
+    }
 
 
     public static void ukryjPrzyciski() {
